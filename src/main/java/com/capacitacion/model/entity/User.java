@@ -1,10 +1,13 @@
 package com.capacitacion.model.entity;
 
+import com.capacitacion.annotations.ValidBirthday;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -31,4 +34,9 @@ public class User {
 
     @Schema(description = "User secondLastName")
     private String secondLastName;
+
+    @NotNull(message = "La fecha de nacimiento es obligatoria.")
+    @Schema(description = "User fecha de nacimiento")
+    @ValidBirthday(minAge = 15) // Personalizamos la edad mínima a 21 años
+    private LocalDateTime dateBirth;
 }
