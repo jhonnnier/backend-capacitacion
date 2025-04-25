@@ -2,7 +2,7 @@ package com.capacitacion.controller;
 
 import com.capacitacion.annotations.TrackExecution;
 import com.capacitacion.model.dto.UserDTO;
-import com.capacitacion.service.IUserService;
+import com.capacitacion.components.notifications.IUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

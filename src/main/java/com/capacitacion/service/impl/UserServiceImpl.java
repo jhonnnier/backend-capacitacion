@@ -5,7 +5,7 @@ import com.capacitacion.model.mappers.UserMapper;
 import com.capacitacion.model.dto.UserDTO;
 import com.capacitacion.model.entity.User;
 import com.capacitacion.repository.IUserRepository;
-import com.capacitacion.service.IUserService;
+import com.capacitacion.components.notifications.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

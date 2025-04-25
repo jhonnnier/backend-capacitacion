@@ -1,4 +1,4 @@
-package com.capacitacion.service;
+package com.capacitacion.components.notifications;
 
 import com.capacitacion.model.dto.UserDTO;
 
