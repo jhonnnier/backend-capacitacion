@@ -36,7 +36,7 @@
 
 - [ ] 3. Fix para el arranque de la app (H2 DDL + seed)
 
-  - [ ] 3.1 Implementar el fix (3 cambios acotados en 2 archivos + 1 nuevo)
+  - [x] 3.1 Implementar el fix (3 cambios acotados en 2 archivos + 1 nuevo)
     - Cambio 1 — `backend-capacitacion/src/main/java/com/capacitacion/model/entity/User.java`: agregar `import jakarta.persistence.Table;` y anotar la clase con `@Table(name = "users")` junto a `@Entity`. NO tocar campos, tipos, anotaciones Lombok, `@Id`, `@Schema` ni `@ValidBirthday(minAge = 15)`
     - Cambio 2 — crear `backend-capacitacion/src/main/java/com/capacitacion/model/entity/Rule.java`: entidad `@Entity` + `@Table(name = "ruls")`, paquete `com.capacitacion.model.entity`, con mismas anotaciones Lombok que `User` (`@Getter/@Setter/@NoArgsConstructor/@AllArgsConstructor/@ToString/@Builder`) y campos `Integer id` (`@Id`), `String code`, `String description`, `boolean active`
     - Cambio 3 — `backend-capacitacion/src/main/resources/data.sql`: reemplazar la columna `'active'` (comillas simples) por `active` (sin comillas) en las 2 filas, manteniendo id/code/description y los valores `RNI-0001` (true) / `RNI-0002` (false)

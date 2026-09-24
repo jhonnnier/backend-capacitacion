@@ -9,7 +9,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoggingInterceptor()); // Registra el interceptor
+        registry.addInterceptor(new LoggingInterceptor()) // Registra el interceptor
+                .excludePathPatterns( // No interceptar los recursos de Swagger/OpenAPI
+                        "/swagger-ui.html",
+                        "/swagger-ui/**",
+                        "/v3/api-docs/**",
+                        "/h2-console/**"
+                );
 
    /*     // Puedes especificar rutas para las que se aplicará el interceptor
         registry.addInterceptor(new OtroInterceptor())
