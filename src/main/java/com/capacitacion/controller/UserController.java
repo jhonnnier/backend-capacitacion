@@ -1,6 +1,7 @@
 package com.capacitacion.controller;
 
 import com.capacitacion.annotations.TrackExecution;
+import com.capacitacion.interceptor.Context;
 import com.capacitacion.model.dto.UserDTO;
 import com.capacitacion.components.notifications.IUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -32,6 +33,7 @@ public class UserController {
             @PathVariable int id
     ) {
         UserDTO userDto = userService.findById(1);
+        System.out.println(Context.getTenantId());
 
         Locale locale = new Locale(lang);
         String msg =  messageSource.getMessage("mensaje.bienvenida", new Object[]{userDto.getFirstName()}, locale);

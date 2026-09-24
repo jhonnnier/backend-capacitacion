@@ -1,14 +1,22 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:managemt
     driverClassName: org.h2.Driver
     username: sa
     password:
 #    platform: h2
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    #    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true # Para insertar datos desde el data.sql
+  sql:
+    init:
+      mode: always # Para insertar datos desde el data.sql
   h2:
     console:
       enabled: true
